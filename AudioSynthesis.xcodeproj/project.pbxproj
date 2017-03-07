@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BEEBA6321E6F596C0008FE3B /* AudioSynthesis.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEEBA6311E6F596C0008FE3B /* AudioSynthesis.hpp */; };
-		BEEBA6341E6F596C0008FE3B /* AudioSynthesisPriv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEEBA6331E6F596C0008FE3B /* AudioSynthesisPriv.hpp */; };
-		BEEBA6361E6F596C0008FE3B /* AudioSynthesis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEEBA6351E6F596C0008FE3B /* AudioSynthesis.cpp */; };
+		BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */; };
+		BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEEBA63E1E6F60210008FE3B /* Oscillator.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEEBA62E1E6F596C0008FE3B /* libAudioSynthesis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioSynthesis.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEEBA6311E6F596C0008FE3B /* AudioSynthesis.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioSynthesis.hpp; sourceTree = "<group>"; };
-		BEEBA6331E6F596C0008FE3B /* AudioSynthesisPriv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioSynthesisPriv.hpp; sourceTree = "<group>"; };
-		BEEBA6351E6F596C0008FE3B /* AudioSynthesis.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AudioSynthesis.cpp; sourceTree = "<group>"; };
+		BEEBA63C1E6F5FF50008FE3B /* AudioSynthesis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioSynthesis.h; sourceTree = "<group>"; };
+		BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
+		BEEBA63E1E6F60210008FE3B /* Oscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Oscillator.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,11 +48,19 @@
 		BEEBA6301E6F596C0008FE3B /* AudioSynthesis */ = {
 			isa = PBXGroup;
 			children = (
-				BEEBA6311E6F596C0008FE3B /* AudioSynthesis.hpp */,
-				BEEBA6331E6F596C0008FE3B /* AudioSynthesisPriv.hpp */,
-				BEEBA6351E6F596C0008FE3B /* AudioSynthesis.cpp */,
+				BEEBA6411E6F602C0008FE3B /* Oscillator */,
+				BEEBA63C1E6F5FF50008FE3B /* AudioSynthesis.h */,
 			);
 			path = AudioSynthesis;
+			sourceTree = "<group>";
+		};
+		BEEBA6411E6F602C0008FE3B /* Oscillator */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBA63E1E6F60210008FE3B /* Oscillator.hpp */,
+				BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */,
+			);
+			name = Oscillator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -63,8 +70,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEBA6321E6F596C0008FE3B /* AudioSynthesis.hpp in Headers */,
-				BEEBA6341E6F596C0008FE3B /* AudioSynthesisPriv.hpp in Headers */,
+				BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEBA6361E6F596C0008FE3B /* AudioSynthesis.cpp in Sources */,
+				BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
