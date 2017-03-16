@@ -10,6 +10,7 @@
 #define Grain_hpp
 
 #include "WaveFile.hpp"
+#include <vector>
 
 namespace AudioSynthesis
 {
@@ -21,10 +22,15 @@ namespace AudioSynthesis
         
         // -------------------- Accessors
         void SetGrainSize(int SamplesPerGrain);
-        void SetVelocity(float samplesPerSecond);
+        void SetGrainVelocity(float FramesPerSecond);
+        void SetGrainCount(int NummberOfGrains);
+        void SetSampleVelocity(int SampleVelocity);
+        void SetStart(float Position);
         
         const int GetGrainSize() const { return grainSize; }
-        const float GetVelocity() const { return velocity; }
+        const float GetGrainVelocity() const { return grainVelocity; }
+        const int GetGrainCount() const { return numGrains; }
+        const int GetSampleVelocity() const { return inc; }
         
         // -------------------- Public Methods
         float tick();
@@ -33,13 +39,20 @@ namespace AudioSynthesis
     private:
         // -------------------- Private Members
         int grainSize;
+        int numGrains;
+        int frame1, frame2;
         int pos;
+        int inc;
         int offset;
+        int count;
         
         int bufferSize;
         int channelNum;
+        int sampleRate;
+        int sampleSize;
         
-        float velocity;
+        float grainVelocity;
+        vector<float> window;
         WaveFile* buffer;
         
         
