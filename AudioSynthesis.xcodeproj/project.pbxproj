@@ -7,11 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2701BA1E7A55370057E5D4 /* Grain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2701B81E7A55370057E5D4 /* Grain.cpp */; };
+		BE2701BB1E7A55370057E5D4 /* Grain.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE2701B91E7A55370057E5D4 /* Grain.hpp */; };
+		BE2701C01E7A56510057E5D4 /* WaveFile.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE2701BE1E7A56510057E5D4 /* WaveFile.hpp */; };
+		BE2701C11E7A56510057E5D4 /* WaveFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2701BF1E7A56510057E5D4 /* WaveFile.cpp */; };
+		BE3198591E7072A20079AA47 /* NaiveFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3198571E7072A20079AA47 /* NaiveFilter.cpp */; };
+		BE31985A1E7072A20079AA47 /* NaiveFilter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3198581E7072A20079AA47 /* NaiveFilter.hpp */; };
+		BE5E4EEB1E6F697400D2C509 /* Envelope.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EE91E6F697400D2C509 /* Envelope.hpp */; };
+		BE5E4EEF1E6F6A4700D2C509 /* AD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4EED1E6F6A4700D2C509 /* AD.cpp */; };
+		BE5E4EF01E6F6A4700D2C509 /* AD.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */; };
+		BE5E4EF61E6F974300D2C509 /* CircuitOsc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4EF41E6F974300D2C509 /* CircuitOsc.cpp */; };
+		BE5E4EF71E6F974300D2C509 /* CircuitOsc.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */; };
 		BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */; };
 		BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEEBA63E1E6F60210008FE3B /* Oscillator.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE2701B81E7A55370057E5D4 /* Grain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grain.cpp; sourceTree = "<group>"; };
+		BE2701B91E7A55370057E5D4 /* Grain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Grain.hpp; sourceTree = "<group>"; };
+		BE2701BE1E7A56510057E5D4 /* WaveFile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WaveFile.hpp; sourceTree = "<group>"; };
+		BE2701BF1E7A56510057E5D4 /* WaveFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaveFile.cpp; sourceTree = "<group>"; };
+		BE3198571E7072A20079AA47 /* NaiveFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NaiveFilter.cpp; sourceTree = "<group>"; };
+		BE3198581E7072A20079AA47 /* NaiveFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NaiveFilter.hpp; sourceTree = "<group>"; };
+		BE5E4EE91E6F697400D2C509 /* Envelope.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Envelope.hpp; sourceTree = "<group>"; };
+		BE5E4EED1E6F6A4700D2C509 /* AD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AD.cpp; sourceTree = "<group>"; };
+		BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AD.hpp; sourceTree = "<group>"; };
+		BE5E4EF41E6F974300D2C509 /* CircuitOsc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircuitOsc.cpp; sourceTree = "<group>"; };
+		BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CircuitOsc.hpp; sourceTree = "<group>"; };
 		BEEBA62E1E6F596C0008FE3B /* libAudioSynthesis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioSynthesis.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEBA63C1E6F5FF50008FE3B /* AudioSynthesis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioSynthesis.h; sourceTree = "<group>"; };
 		BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
@@ -29,6 +51,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE2701BC1E7A553E0057E5D4 /* Granular */ = {
+			isa = PBXGroup;
+			children = (
+				BE2701B91E7A55370057E5D4 /* Grain.hpp */,
+				BE2701B81E7A55370057E5D4 /* Grain.cpp */,
+			);
+			name = Granular;
+			sourceTree = "<group>";
+		};
+		BE2701BD1E7A56440057E5D4 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE2701BE1E7A56510057E5D4 /* WaveFile.hpp */,
+				BE2701BF1E7A56510057E5D4 /* WaveFile.cpp */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		BE31985B1E7072A70079AA47 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				BE3198581E7072A20079AA47 /* NaiveFilter.hpp */,
+				BE3198571E7072A20079AA47 /* NaiveFilter.cpp */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
+		BE5E4EEC1E6F698000D2C509 /* Envelope */ = {
+			isa = PBXGroup;
+			children = (
+				BE5E4EE91E6F697400D2C509 /* Envelope.hpp */,
+				BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */,
+				BE5E4EED1E6F6A4700D2C509 /* AD.cpp */,
+			);
+			name = Envelope;
+			sourceTree = "<group>";
+		};
 		BEEBA6251E6F596C0008FE3B = {
 			isa = PBXGroup;
 			children = (
@@ -48,7 +107,11 @@
 		BEEBA6301E6F596C0008FE3B /* AudioSynthesis */ = {
 			isa = PBXGroup;
 			children = (
+				BE2701BD1E7A56440057E5D4 /* Files */,
+				BE2701BC1E7A553E0057E5D4 /* Granular */,
+				BE31985B1E7072A70079AA47 /* Filter */,
 				BEEBA6411E6F602C0008FE3B /* Oscillator */,
+				BE5E4EEC1E6F698000D2C509 /* Envelope */,
 				BEEBA63C1E6F5FF50008FE3B /* AudioSynthesis.h */,
 			);
 			path = AudioSynthesis;
@@ -57,6 +120,8 @@
 		BEEBA6411E6F602C0008FE3B /* Oscillator */ = {
 			isa = PBXGroup;
 			children = (
+				BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */,
+				BE5E4EF41E6F974300D2C509 /* CircuitOsc.cpp */,
 				BEEBA63E1E6F60210008FE3B /* Oscillator.hpp */,
 				BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */,
 			);
@@ -70,7 +135,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5E4EF71E6F974300D2C509 /* CircuitOsc.hpp in Headers */,
+				BE31985A1E7072A20079AA47 /* NaiveFilter.hpp in Headers */,
+				BE5E4EEB1E6F697400D2C509 /* Envelope.hpp in Headers */,
 				BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */,
+				BE2701C01E7A56510057E5D4 /* WaveFile.hpp in Headers */,
+				BE2701BB1E7A55370057E5D4 /* Grain.hpp in Headers */,
+				BE5E4EF01E6F6A4700D2C509 /* AD.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5E4EF61E6F974300D2C509 /* CircuitOsc.cpp in Sources */,
+				BE3198591E7072A20079AA47 /* NaiveFilter.cpp in Sources */,
+				BE2701BA1E7A55370057E5D4 /* Grain.cpp in Sources */,
+				BE5E4EEF1E6F6A4700D2C509 /* AD.cpp in Sources */,
+				BE2701C11E7A56510057E5D4 /* WaveFile.cpp in Sources */,
 				BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +343,7 @@
 				BEEBA63B1E6F596C0008FE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
