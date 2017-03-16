@@ -47,5 +47,9 @@ namespace AudioSynthesis
         return modulo;
     }
     
+    void Oscillator::ModulatePitch(float scale)
+    {
+        step = (1 + scale) * frequency / sampleRate;
+    }
     
 }

@@ -19,7 +19,7 @@ namespace AudioSynthesis
         
         // -------------------- Accessors
         const float GetSampleRate()const { return sampleRate; }
-        const float GetFrequency()const { return sampleRate; }
+        const float GetPitch()const { return frequency; }
         const float GetModulo()const { return modulo; }
         const float GetStep()const { return step; }
         
@@ -28,6 +28,7 @@ namespace AudioSynthesis
         
         // -------------------- Public Methods
         float tick();
+        void ModulatePitch(float scale);
         
     private:
         // -------------------- Private Members
