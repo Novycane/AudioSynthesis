@@ -21,8 +21,7 @@ namespace AudioSynthesis
         sampleRate = Buffer->GetSampleRate();
         grainVelocity = sampleRate;
         SetGrainSize(512);
-        frame1 = 0;
-        frame2 = 0;
+        frame = 0;
         inc = 1;
     }
     
@@ -31,42 +30,40 @@ namespace AudioSynthesis
     // -------------------------------------------------- Public Methods
     float Grain::tick()
     {
-        pos+= inc;
-        if(frame1 < 0 )
-            frame1 = frame1;
+        float temp;
         
-        if(pos > grainSize - 1)
+        if(pos == grainSize - 2 || pos < 2)
+        {
+            
+            temp = sample;
+            sample = buffer->GetSampleFloat(frame + pos) ;// * window[pos];
+            temp = (temp + sample) / 2;
+        }
+        else
+        {
+            temp = buffer->GetSampleFloat(frame + pos) ;// * window[pos];
+            sample = temp;
+        }
+        
+        if(frame + pos > bufferSize)
+            frame = frame;
+        
+        
+        
+        pos+= inc;
+        
+        if(pos > grainSize - 1 || pos < 0)
         {
             pos = 0;
-            frame2 = frame1;
-            frame1 += grainVelocity * grainSize;
-            if(frame1 > bufferSize)
-                frame1 -= bufferSize;
-            else if(frame1 < 0)
-                frame1 += bufferSize;
+            frame += grainSize * grainVelocity;
+            ShiftFrame();
         }
-        else if(pos < 0)
+        else if(frame + pos >= bufferSize ||  frame + pos < 0)
         {
-            pos = grainSize;
-            frame2 = frame1;
-            frame1 += grainVelocity * grainSize;
-            if(frame1 > bufferSize)
-                frame1 -= bufferSize;
-            else if(frame1 < 0)
-                frame1 =+ bufferSize;
-        }
-        
-        if(pos + frame1 > bufferSize)
-        {
-            frame1 -= bufferSize;
-        }
-        else if(pos + frame1 < 0)
-        {
-            frame1 += bufferSize;
+            ShiftFrame();
         }
         
         
-        float temp = buffer->GetSampleFloat(frame1 + pos) * window[pos];
         
         
         return temp;
@@ -107,13 +104,24 @@ namespace AudioSynthesis
     
     void Grain::SetStart(float Position)
     {
-        pos = (int) (Position * buffer->GetTotalSampleSize());
+        frame = (int) (Position * buffer->GetTotalSampleSize());
     }
     
     #pragma mark Private Methods
     // -------------------------------------------------- Private Methods
     
-    
+    void Grain::ShiftFrame()
+    {
+        if(frame + pos >= bufferSize)
+        {
+            frame -= bufferSize;
+        }
+        else if(frame + pos <= 0)
+        {
+            frame += bufferSize;
+        }
+        
+    }
 
     
 } // end AudioSynthesis namespace

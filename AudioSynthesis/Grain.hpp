@@ -40,7 +40,7 @@ namespace AudioSynthesis
         // -------------------- Private Members
         int grainSize;
         int numGrains;
-        int frame1, frame2;
+        int frame;
         int pos;
         int inc;
         int offset;
@@ -52,11 +52,13 @@ namespace AudioSynthesis
         int sampleSize;
         
         float grainVelocity;
+        float sample;
         vector<float> window;
         WaveFile* buffer;
         
         
         // -------------------- Private Methods
+        void ShiftFrame();
         
         
     }; // End Grain class
