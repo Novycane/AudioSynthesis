@@ -38,12 +38,6 @@ namespace AudioSynthesis
     
     #pragma mark Private Methods
     // -------------------------------------------------- Private Methods
-    float Lorenz::Euler()
-    {
-        return 0.0;
-    }
-    
-    
     float Lorenz::RK2()
     {
         float kx1, kx2;

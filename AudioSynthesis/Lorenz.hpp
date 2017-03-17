@@ -20,6 +20,15 @@ namespace AudioSynthesis
         // -------------------- Public Methods
         float tick();
         
+        // -------------------- Accessors
+        void setX(float X) {x = X;}
+        void setY(float Y) {y = Y;}
+        void setZ(float Z) {z = Z;}
+        void setSigma(float Sigma) {sigma = Sigma;}
+        void setB(float B) {b = B;}
+        void setR(float R) {r = R;}
+        void setStep(float Step) {step = Step;}
+        
     private:
         // -------------------- Private Members
         float x;
