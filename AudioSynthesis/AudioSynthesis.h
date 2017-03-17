@@ -11,6 +11,7 @@
 
 #include "Oscillator.hpp"
 #include "CircuitOsc.hpp"
+#include "Lorenz.hpp"
 
 #include "Envelope.hpp"
 #include "AD.hpp"
