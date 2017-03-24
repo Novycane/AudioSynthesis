@@ -11,6 +11,7 @@
 
 #include "WaveFile.hpp"
 #include <vector>
+#include "Window.hpp"
 
 namespace AudioSynthesis
 {
@@ -19,6 +20,7 @@ namespace AudioSynthesis
     public:
         // -------------------- Constructors
         Grain(WaveFile * & Buffer);
+        ~Grain();
         
         // -------------------- Accessors
         void SetGrainSize(int SamplesPerGrain);
@@ -26,11 +28,15 @@ namespace AudioSynthesis
         void SetGrainCount(int NummberOfGrains);
         void SetSampleVelocity(int SampleVelocity);
         void SetStart(float Position);
+        void SetOverlap(int Overlap);
+        
+        void SetWindow(WindowType type);
         
         const int GetGrainSize() const { return grainSize; }
         const float GetGrainVelocity() const { return grainVelocity; }
         const int GetGrainCount() const { return numGrains; }
         const int GetSampleVelocity() const { return inc; }
+        const int GetOverlap() const { return overlap; }
         
         // -------------------- Public Methods
         float tick();
@@ -42,8 +48,10 @@ namespace AudioSynthesis
         int numGrains;
         int frame;
         int pos;
+        int prevOverlap, nextOverlap;
         int inc;
         int offset;
+        int overlap;
         int count;
         
         int bufferSize;
@@ -53,13 +61,16 @@ namespace AudioSynthesis
         
         float grainVelocity;
         float sample;
-        vector<float> window;
+        vector<float> edgeBuffer;
         WaveFile* buffer;
+        Window* FrameWindow;
+        WindowType windowType;
         
         
         // -------------------- Private Methods
         void ShiftFrame();
-        
+        inline float SmallOverlap();
+        inline float FullOverlap();
         
     }; // End Grain class
 } // End AudioSynthesis

@@ -13,8 +13,17 @@
 		BE2701C11E7A56510057E5D4 /* WaveFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2701BF1E7A56510057E5D4 /* WaveFile.cpp */; };
 		BE3198591E7072A20079AA47 /* NaiveFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3198571E7072A20079AA47 /* NaiveFilter.cpp */; };
 		BE31985A1E7072A20079AA47 /* NaiveFilter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3198581E7072A20079AA47 /* NaiveFilter.hpp */; };
+		BE33F7A01E842ED30006DDD1 /* FFT.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE33F79C1E842ED30006DDD1 /* FFT.hpp */; };
+		BE33F7A11E842ED30006DDD1 /* FFT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE33F79D1E842ED30006DDD1 /* FFT.cpp */; };
+		BE33F7A21E842ED30006DDD1 /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE33F79E1E842ED30006DDD1 /* Window.hpp */; };
+		BE33F7A31E842ED30006DDD1 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE33F79F1E842ED30006DDD1 /* Window.cpp */; };
+		BE33F7A51E842FF90006DDD1 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = BE33F7A41E842FF90006DDD1 /* Constants.h */; };
 		BE3C37351E7BC42D003C68D6 /* Rossler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3C37331E7BC42D003C68D6 /* Rossler.cpp */; };
 		BE3C37361E7BC42D003C68D6 /* Rossler.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3C37341E7BC42D003C68D6 /* Rossler.hpp */; };
+		BE3C373A1E7C42D0003C68D6 /* Henon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3C37381E7C42D0003C68D6 /* Henon.cpp */; };
+		BE3C373B1E7C42D0003C68D6 /* Henon.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3C37391E7C42D0003C68D6 /* Henon.hpp */; };
+		BE3C373E1E7C472C003C68D6 /* HarmonicOsc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3C373C1E7C472C003C68D6 /* HarmonicOsc.cpp */; };
+		BE3C373F1E7C472C003C68D6 /* HarmonicOsc.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3C373D1E7C472C003C68D6 /* HarmonicOsc.hpp */; };
 		BE5E4EEB1E6F697400D2C509 /* Envelope.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EE91E6F697400D2C509 /* Envelope.hpp */; };
 		BE5E4EEF1E6F6A4700D2C509 /* AD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4EED1E6F6A4700D2C509 /* AD.cpp */; };
 		BE5E4EF01E6F6A4700D2C509 /* AD.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */; };
@@ -33,8 +42,17 @@
 		BE2701BF1E7A56510057E5D4 /* WaveFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaveFile.cpp; sourceTree = "<group>"; };
 		BE3198571E7072A20079AA47 /* NaiveFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NaiveFilter.cpp; sourceTree = "<group>"; };
 		BE3198581E7072A20079AA47 /* NaiveFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NaiveFilter.hpp; sourceTree = "<group>"; };
+		BE33F79C1E842ED30006DDD1 /* FFT.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FFT.hpp; sourceTree = "<group>"; };
+		BE33F79D1E842ED30006DDD1 /* FFT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFT.cpp; sourceTree = "<group>"; };
+		BE33F79E1E842ED30006DDD1 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		BE33F79F1E842ED30006DDD1 /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		BE33F7A41E842FF90006DDD1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		BE3C37331E7BC42D003C68D6 /* Rossler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rossler.cpp; sourceTree = "<group>"; };
 		BE3C37341E7BC42D003C68D6 /* Rossler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rossler.hpp; sourceTree = "<group>"; };
+		BE3C37381E7C42D0003C68D6 /* Henon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Henon.cpp; sourceTree = "<group>"; };
+		BE3C37391E7C42D0003C68D6 /* Henon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Henon.hpp; sourceTree = "<group>"; };
+		BE3C373C1E7C472C003C68D6 /* HarmonicOsc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarmonicOsc.cpp; sourceTree = "<group>"; };
+		BE3C373D1E7C472C003C68D6 /* HarmonicOsc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HarmonicOsc.hpp; sourceTree = "<group>"; };
 		BE5E4EE91E6F697400D2C509 /* Envelope.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Envelope.hpp; sourceTree = "<group>"; };
 		BE5E4EED1E6F6A4700D2C509 /* AD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AD.cpp; sourceTree = "<group>"; };
 		BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AD.hpp; sourceTree = "<group>"; };
@@ -86,6 +104,18 @@
 			name = Filter;
 			sourceTree = "<group>";
 		};
+		BE33F79B1E842EBB0006DDD1 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				BE33F7A41E842FF90006DDD1 /* Constants.h */,
+				BE33F79C1E842ED30006DDD1 /* FFT.hpp */,
+				BE33F79D1E842ED30006DDD1 /* FFT.cpp */,
+				BE33F79E1E842ED30006DDD1 /* Window.hpp */,
+				BE33F79F1E842ED30006DDD1 /* Window.cpp */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
 		BE5E4EEC1E6F698000D2C509 /* Envelope */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +145,7 @@
 		BEEBA6301E6F596C0008FE3B /* AudioSynthesis */ = {
 			isa = PBXGroup;
 			children = (
+				BE33F79B1E842EBB0006DDD1 /* Math */,
 				BE2701BD1E7A56440057E5D4 /* Files */,
 				BE2701BC1E7A553E0057E5D4 /* Granular */,
 				BE31985B1E7072A70079AA47 /* Filter */,
@@ -136,6 +167,10 @@
 				BE6A713A1E7B9A150006EAF7 /* Lorenz.cpp */,
 				BE3C37341E7BC42D003C68D6 /* Rossler.hpp */,
 				BE3C37331E7BC42D003C68D6 /* Rossler.cpp */,
+				BE3C37391E7C42D0003C68D6 /* Henon.hpp */,
+				BE3C37381E7C42D0003C68D6 /* Henon.cpp */,
+				BE3C373D1E7C472C003C68D6 /* HarmonicOsc.hpp */,
+				BE3C373C1E7C472C003C68D6 /* HarmonicOsc.cpp */,
 			);
 			name = Oscillator;
 			sourceTree = "<group>";
@@ -149,11 +184,16 @@
 			files = (
 				BE5E4EF71E6F974300D2C509 /* CircuitOsc.hpp in Headers */,
 				BE31985A1E7072A20079AA47 /* NaiveFilter.hpp in Headers */,
+				BE3C373F1E7C472C003C68D6 /* HarmonicOsc.hpp in Headers */,
 				BE6A713D1E7B9A150006EAF7 /* Lorenz.hpp in Headers */,
 				BE5E4EEB1E6F697400D2C509 /* Envelope.hpp in Headers */,
 				BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */,
+				BE33F7A21E842ED30006DDD1 /* Window.hpp in Headers */,
+				BE3C373B1E7C42D0003C68D6 /* Henon.hpp in Headers */,
+				BE33F7A51E842FF90006DDD1 /* Constants.h in Headers */,
 				BE3C37361E7BC42D003C68D6 /* Rossler.hpp in Headers */,
 				BE2701C01E7A56510057E5D4 /* WaveFile.hpp in Headers */,
+				BE33F7A01E842ED30006DDD1 /* FFT.hpp in Headers */,
 				BE2701BB1E7A55370057E5D4 /* Grain.hpp in Headers */,
 				BE5E4EF01E6F6A4700D2C509 /* AD.hpp in Headers */,
 			);
@@ -219,10 +259,14 @@
 			files = (
 				BE5E4EF61E6F974300D2C509 /* CircuitOsc.cpp in Sources */,
 				BE3198591E7072A20079AA47 /* NaiveFilter.cpp in Sources */,
+				BE3C373E1E7C472C003C68D6 /* HarmonicOsc.cpp in Sources */,
 				BE2701BA1E7A55370057E5D4 /* Grain.cpp in Sources */,
+				BE33F7A11E842ED30006DDD1 /* FFT.cpp in Sources */,
 				BE5E4EEF1E6F6A4700D2C509 /* AD.cpp in Sources */,
 				BE6A713C1E7B9A150006EAF7 /* Lorenz.cpp in Sources */,
+				BE33F7A31E842ED30006DDD1 /* Window.cpp in Sources */,
 				BE2701C11E7A56510057E5D4 /* WaveFile.cpp in Sources */,
+				BE3C373A1E7C42D0003C68D6 /* Henon.cpp in Sources */,
 				BE3C37351E7BC42D003C68D6 /* Rossler.cpp in Sources */,
 				BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */,
 			);

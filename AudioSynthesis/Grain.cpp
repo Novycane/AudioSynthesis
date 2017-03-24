@@ -22,7 +22,16 @@ namespace AudioSynthesis
         grainVelocity = sampleRate;
         SetGrainSize(512);
         frame = 0;
+        overlap = 0;
+        
         inc = 1;
+        FrameWindow = nullptr;
+    }
+    
+    Grain::~Grain()
+    {
+        if(FrameWindow != nullptr)
+            delete FrameWindow;
     }
     
 
@@ -30,25 +39,35 @@ namespace AudioSynthesis
     // -------------------------------------------------- Public Methods
     float Grain::tick()
     {
+        return FullOverlap();
+    }
+    
+    /*
+    float Grain::tick()
+    {
         float temp;
+        /*
+         if(pos == grainSize - 2 || pos < 2)
+         {
+         cout << (*FrameWindow)[pos] << endl;
+         temp = sample;
+         sample = buffer->GetSampleFloat(frame + pos);
+         if(FrameWindow != nullptr)
+         sample *= (*FrameWindow)[pos];
+         temp = (temp + sample) / 2;
+         }
+         else
+         {
+         }
+         
         
-        if(pos == grainSize - 2 || pos < 2)
-        {
-            
-            temp = sample;
-            sample = buffer->GetSampleFloat(frame + pos) ;// * window[pos];
-            temp = (temp + sample) / 2;
-        }
-        else
-        {
-            temp = buffer->GetSampleFloat(frame + pos) ;// * window[pos];
-            sample = temp;
-        }
+        temp = buffer->GetSampleFloat(frame + pos);
+        if(FrameWindow != nullptr)
+            temp *= (*FrameWindow)[pos];
+        sample = temp;
         
         if(frame + pos > bufferSize)
             frame = frame;
-        
-        
         
         pos+= inc;
         
@@ -63,11 +82,9 @@ namespace AudioSynthesis
             ShiftFrame();
         }
         
-        
-        
-        
         return temp;
     }
+    */
     
     
     #pragma mark Accessors
@@ -76,14 +93,9 @@ namespace AudioSynthesis
     {
         grainSize = FramesPerSecond;
         offset = pos;
-        window.resize(FramesPerSecond);
-        for(int i=0; i<FramesPerSecond; i++)
+        if(FrameWindow != nullptr)
         {
-            float I = (float)i;
-            float mid = FramesPerSecond / 2.0;
-            float temp = (((I - mid) / mid) * ((I - mid) / mid)) * -1.0 + 1.0; // Quadratic
-            //float temp = tanh((((I - mid) / mid) * ((I - mid) / mid)) * -1.0 + 1.0); // Quadratic + tanh
-            window[i] = temp;
+            SetWindow(windowType);
         }
     }
     
@@ -107,11 +119,26 @@ namespace AudioSynthesis
         frame = (int) (Position * buffer->GetTotalSampleSize());
     }
     
+    void Grain::SetWindow(WindowType type)
+    {
+        windowType = type;
+        if(FrameWindow != nullptr)
+            delete FrameWindow;
+        FrameWindow = new Window(type, 2 * overlap);
+    }
+    
+    void Grain::SetOverlap(int Overlap)
+    {
+        overlap = Overlap;
+        edgeBuffer.resize(2 * overlap);
+    }
+    
     #pragma mark Private Methods
     // -------------------------------------------------- Private Methods
     
     void Grain::ShiftFrame()
     {
+        
         if(frame + pos >= bufferSize)
         {
             frame -= bufferSize;
@@ -120,8 +147,88 @@ namespace AudioSynthesis
         {
             frame += bufferSize;
         }
-        
     }
-
     
+    inline float Grain::FullOverlap()
+    {
+        float temp;
+        float factor;
+        
+        temp = buffer->GetSampleFloat(frame + pos);
+        if(FrameWindow != nullptr)
+        {
+            factor = (*FrameWindow)[pos];
+            sample = temp * factor;
+        }
+        else
+        {
+            temp = buffer->GetSampleFloat(frame + pos);
+            sample = temp;
+        }
+        
+        pos+= inc;
+        
+        if(pos > grainSize - 1 || pos < 0)
+        {
+            pos = 0;
+            frame += grainSize * grainVelocity;
+            ShiftFrame();
+        }
+        else if(frame + pos >= bufferSize ||  frame + pos < 0)
+        {
+            ShiftFrame();
+        }
+        
+        return sample;
+    }
+    
+    inline float Grain::SmallOverlap()
+    {
+        float temp;
+        float factor;
+        if(pos < overlap)
+        {
+            temp = buffer->GetSampleFloat(frame + pos);
+            if(FrameWindow != nullptr)
+            {
+                factor = (*FrameWindow)[pos];
+                sample = temp * factor + edgeBuffer[pos + overlap / 2] * (1.0 - factor);
+                edgeBuffer[pos + overlap / 2] = temp;
+            }
+        }
+        else if(pos >= grainSize - overlap )
+        {
+            temp = buffer->GetSampleFloat(frame + pos);
+            if(FrameWindow != nullptr)
+            {
+                factor = (*FrameWindow)[grainSize - pos - 1];
+                sample = temp * factor + edgeBuffer[grainSize - pos - 1] * (1.0 - factor);
+                edgeBuffer[grainSize - pos - 1] = temp;
+            }
+        }
+        else
+        {
+            temp = buffer->GetSampleFloat(frame + pos);
+            sample = temp;
+        }
+        
+        // Delete
+        if(frame + pos > bufferSize)
+            frame = frame;
+        
+        pos+= inc;
+        
+        if(pos > grainSize - 1 || pos < 0)
+        {
+            pos = 0;
+            frame += grainSize * grainVelocity;
+            ShiftFrame();
+        }
+        else if(frame + pos >= bufferSize ||  frame + pos < 0)
+        {
+            ShiftFrame();
+        }
+        
+        return sample;
+    }
 } // end AudioSynthesis namespace

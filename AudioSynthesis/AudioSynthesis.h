@@ -9,10 +9,17 @@
 #ifndef AudioSynthesis_h
 #define AudioSynthesis_h
 
+#include "Constants.h"
+
+#include "FFT.hpp"
+#include "Window.hpp"
+
 #include "Oscillator.hpp"
 #include "CircuitOsc.hpp"
 #include "Lorenz.hpp"
 #include "Rossler.hpp"
+#include "Henon.hpp"
+#include "HarmonicOsc.hpp"
 
 #include "Envelope.hpp"
 #include "AD.hpp"
