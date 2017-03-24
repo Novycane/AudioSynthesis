@@ -55,6 +55,8 @@ void WaveFile::WriteFileToDisk(const string & FileName)
 {
     ThisFile.flags(ios::binary);
     ThisFile.open(FileName);
+    if(!ThisFile.is_open())
+        cout << "Error\n" ;
     ThisFile.write((char*)memblock, totalByteSize);
     ThisFile.close();
 }

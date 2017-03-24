@@ -11,7 +11,7 @@
 namespace AudioSynthesis
 {
     
-#pragma mark Constructors
+    #pragma mark Constructors
     // -------------------------------------------------- Constructors
     Rossler::Rossler(float SampleRate)
     {
@@ -27,16 +27,15 @@ namespace AudioSynthesis
     
     
     
-#pragma mark Public Methods
+    #pragma mark Public Methods
     // -------------------------------------------------- Public Methods
     float Rossler::tick()
     {
-        
         return RK4();
     }
     
     
-#pragma mark Private Methods
+    #pragma mark Private Methods
     // -------------------------------------------------- Private Methods
     float Rossler::RK2()
     {
