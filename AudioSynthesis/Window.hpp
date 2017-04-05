@@ -9,6 +9,7 @@
 #ifndef Window_hpp
 #define Window_hpp
 
+#include "Enumerations.h"
 #include <vector>
 #include <cmath>
 #include "Constants.h"
@@ -17,9 +18,7 @@ using namespace std;
 
 namespace AudioSynthesis
 {
-    
-    enum WindowType {TRIANGLE, PARZEN, WELCH, HANN, HAMMING, BLACKMAN, NUTTALL, BLACKMAN_NUTTALL, BLACKMAN_HARRIS, FLATTOP, GAUSSIAN, CONFINED_GAUSSIAN, NORMAL, TUKEY, PLANCK_TAPER, SLEPIAN, KAISER, DOLPH_CHEBYSHEV, ULTRASPHERICAL, POISSON, BARTLETT_HANN, PLANCK_BESSEL, HANN_POISSON, LANCZOS};
-    
+
     class Window
     {
     public:

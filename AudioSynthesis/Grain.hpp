@@ -20,23 +20,20 @@ namespace AudioSynthesis
     public:
         // -------------------- Constructors
         Grain(WaveFile * & Buffer);
+        Grain();
         ~Grain();
         
         // -------------------- Accessors
         void SetGrainSize(int SamplesPerGrain);
         void SetGrainVelocity(float FramesPerSecond);
-        void SetGrainCount(int NummberOfGrains);
         void SetSampleVelocity(int SampleVelocity);
         void SetStart(float Position);
-        void SetOverlap(int Overlap);
-        
         void SetWindow(WindowType type);
+        void AssignBuffer(vector<float>* & AudioBuffer);
         
         const int GetGrainSize() const { return grainSize; }
         const float GetGrainVelocity() const { return grainVelocity; }
-        const int GetGrainCount() const { return numGrains; }
         const int GetSampleVelocity() const { return inc; }
-        const int GetOverlap() const { return overlap; }
         
         // -------------------- Public Methods
         float tick();
@@ -45,13 +42,10 @@ namespace AudioSynthesis
     private:
         // -------------------- Private Members
         int grainSize;
-        int numGrains;
         int frame;
         int pos;
-        int prevOverlap, nextOverlap;
         int inc;
-        int offset;
-        int overlap;
+        //int offset;
         int count;
         
         int bufferSize;
@@ -61,8 +55,7 @@ namespace AudioSynthesis
         
         float grainVelocity;
         float sample;
-        vector<float> edgeBuffer;
-        WaveFile* buffer;
+        vector<float>* buffer;
         Window* FrameWindow;
         WindowType windowType;
         

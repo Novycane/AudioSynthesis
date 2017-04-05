@@ -9,6 +9,8 @@
 #ifndef AudioSynthesis_h
 #define AudioSynthesis_h
 
+#include "Enumerations.h"
+
 #include "Constants.h"
 
 #include "FFT.hpp"
@@ -29,5 +31,6 @@
 #include "NaiveFilter.hpp"
 
 #include "WaveFile.hpp"
+
 
 #endif /* AudioSynthesis_h */

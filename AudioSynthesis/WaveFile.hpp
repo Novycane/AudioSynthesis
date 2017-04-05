@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -49,6 +50,8 @@ namespace AudioSynthesis
         void SetSampleRate(int SampleRate) { sampleRate = SampleRate; };
         void SetSampleSize(int SampleSize) { sampleSize = SampleSize; };
         void SetNumChannels(int NumChannels) { numChannels = NumChannels; };
+        
+        bool CreateVector(vector<float> & Data, int ChannelNumber);
         
     private:
         ofstream ThisFile;

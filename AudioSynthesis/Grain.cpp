@@ -15,23 +15,41 @@ namespace AudioSynthesis
     // -------------------------------------------------- Constructors
     Grain::Grain(WaveFile * & Buffer)
     {
-        buffer = Buffer;
-        bufferSize = buffer->GetTotalByteSize() * 8 / Buffer->GetSampleSize();
-        channelNum = buffer->GetNumChannels();
+        FrameWindow = nullptr;
+        Buffer->CreateVector(*buffer, 1);
+        bufferSize = Buffer->GetTotalByteSize() * 8 / Buffer->GetSampleSize();
+        channelNum = Buffer->GetNumChannels();
         sampleRate = Buffer->GetSampleRate();
         grainVelocity = sampleRate;
         SetGrainSize(512);
         frame = 0;
-        overlap = 0;
+    
+        inc = 1;
+    }
+    
+    Grain::Grain()
+    {
+        FrameWindow = nullptr;
+        buffer = nullptr;
+        
+        bufferSize = 0;
+        channelNum = 0;
+        sampleRate = 0;
+        grainVelocity = 1.0;
+        SetGrainSize(512);
+        frame = 0;
         
         inc = 1;
-        FrameWindow = nullptr;
+
     }
     
     Grain::~Grain()
     {
         if(FrameWindow != nullptr)
             delete FrameWindow;
+        
+        if(buffer != nullptr)
+            delete buffer;
     }
     
 
@@ -92,7 +110,6 @@ namespace AudioSynthesis
     void Grain::SetGrainSize(int FramesPerSecond)
     {
         grainSize = FramesPerSecond;
-        offset = pos;
         if(FrameWindow != nullptr)
         {
             SetWindow(windowType);
@@ -103,12 +120,7 @@ namespace AudioSynthesis
     {
         grainVelocity = samplesPerSecond;
     }
-    
-    void Grain::SetGrainCount(int NumberOfGrains)
-    {
-        numGrains = NumberOfGrains;
-    }
-    
+        
     void Grain::SetSampleVelocity(int SampleVelocity)
     {
         inc = SampleVelocity;
@@ -116,7 +128,7 @@ namespace AudioSynthesis
     
     void Grain::SetStart(float Position)
     {
-        frame = (int) (Position * buffer->GetTotalSampleSize());
+        frame = (int) (Position * buffer->size());
     }
     
     void Grain::SetWindow(WindowType type)
@@ -124,13 +136,13 @@ namespace AudioSynthesis
         windowType = type;
         if(FrameWindow != nullptr)
             delete FrameWindow;
-        FrameWindow = new Window(type, 2 * overlap);
+        FrameWindow = new Window(type, grainSize);
     }
     
-    void Grain::SetOverlap(int Overlap)
+    void Grain::AssignBuffer(vector<float>* & AudioBuffer)
     {
-        overlap = Overlap;
-        edgeBuffer.resize(2 * overlap);
+        bufferSize = AudioBuffer->size();
+        buffer = AudioBuffer;
     }
     
     #pragma mark Private Methods
@@ -154,7 +166,7 @@ namespace AudioSynthesis
         float temp;
         float factor;
         
-        temp = buffer->GetSampleFloat(frame + pos);
+        temp = (*buffer)[frame + pos];
         if(FrameWindow != nullptr)
         {
             factor = (*FrameWindow)[pos];
@@ -162,7 +174,7 @@ namespace AudioSynthesis
         }
         else
         {
-            temp = buffer->GetSampleFloat(frame + pos);
+            temp = (*buffer)[frame + pos];
             sample = temp;
         }
         
@@ -186,29 +198,27 @@ namespace AudioSynthesis
     {
         float temp;
         float factor;
-        if(pos < overlap)
+        if(pos < 0)
         {
-            temp = buffer->GetSampleFloat(frame + pos);
+            temp = (*buffer)[frame + pos];
             if(FrameWindow != nullptr)
             {
                 factor = (*FrameWindow)[pos];
-                sample = temp * factor + edgeBuffer[pos + overlap / 2] * (1.0 - factor);
-                edgeBuffer[pos + overlap / 2] = temp;
-            }
+                sample = temp * factor;
+           }
         }
-        else if(pos >= grainSize - overlap )
+        else if(pos >= grainSize)
         {
-            temp = buffer->GetSampleFloat(frame + pos);
+            temp = (*buffer)[frame + pos];
             if(FrameWindow != nullptr)
             {
                 factor = (*FrameWindow)[grainSize - pos - 1];
-                sample = temp * factor + edgeBuffer[grainSize - pos - 1] * (1.0 - factor);
-                edgeBuffer[grainSize - pos - 1] = temp;
+                sample = temp * factor;
             }
         }
         else
         {
-            temp = buffer->GetSampleFloat(frame + pos);
+            temp = (*buffer)[frame + pos];
             sample = temp;
         }
         

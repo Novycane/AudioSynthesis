@@ -39,6 +39,34 @@ WaveFile::~WaveFile()
 #pragma mark Public Methods
 // ---------------------------------------- Public Methods
 
+bool WaveFile::CreateVector(vector<float> & Data, int ChannelNumber)
+{
+    /*
+     
+     int totalByteSize;
+     int totalSampleSize;
+     int byteRate;
+     int blockAlign;
+     int sampleRate;
+     int sampleSize; // Bits
+     int numChannels;
+
+     */
+    if(ChannelNumber > numChannels || ChannelNumber < 1)
+        return false;
+    
+    
+    Data.clear();
+    Data.resize(totalSampleSize);
+    for(int i=0; i<totalSampleSize; i++)
+    {
+        Data[i] = fblock[i];
+    }
+    
+    
+    return true;
+}
+    
 void WaveFile::ResizeBuffer(int NumberOfBytes)
 {
     if(memblock != nullptr)
