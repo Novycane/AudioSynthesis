@@ -28,6 +28,7 @@ namespace AudioSynthesis
         void SetGrainVelocity(float FramesPerSecond);
         void SetSampleVelocity(int SampleVelocity);
         void SetStart(float Position);
+        void SetPosition(int Position);
         void SetWindow(WindowType type);
         void AssignBuffer(vector<float>* & AudioBuffer);
         

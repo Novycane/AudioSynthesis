@@ -16,6 +16,7 @@ namespace AudioSynthesis
     Grain::Grain(WaveFile * & Buffer)
     {
         FrameWindow = nullptr;
+        buffer = new vector<float>();
         Buffer->CreateVector(*buffer, 1);
         bufferSize = Buffer->GetTotalByteSize() * 8 / Buffer->GetSampleSize();
         channelNum = Buffer->GetNumChannels();
@@ -145,6 +146,11 @@ namespace AudioSynthesis
         buffer = AudioBuffer;
     }
     
+    void Grain::SetPosition(int Position)
+    {
+        pos = Position;
+    }
+    
     #pragma mark Private Methods
     // -------------------------------------------------- Private Methods
     
@@ -221,11 +227,7 @@ namespace AudioSynthesis
             temp = (*buffer)[frame + pos];
             sample = temp;
         }
-        
-        // Delete
-        if(frame + pos > bufferSize)
-            frame = frame;
-        
+                
         pos+= inc;
         
         if(pos > grainSize - 1 || pos < 0)
