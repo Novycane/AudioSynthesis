@@ -40,6 +40,9 @@ namespace AudioSynthesis
         void Compute(vector<complex<double>> & x);
         void ComputeInverse(vector<double> & x, vector<complex<double>> & X);
         void ComputeInverse(vector<complex<double>> & x);
+        void ComputeCepstrum(vector<double> & x, vector<double> & C);
+        void ComputeCepstrum(vector<double> & x);
+        void ComputeMinPhase(vector<double> & x);
         
     private:
         // -------------------- Private Members

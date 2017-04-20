@@ -19,52 +19,31 @@ namespace AudioSynthesis
     {
     public:
         // -------------------- Constructors
-        Grain(WaveFile * & Buffer);
-        Grain();
+        Grain(float SampleRate);
         ~Grain();
         
         // -------------------- Accessors
         void SetGrainSize(int SamplesPerGrain);
-        void SetGrainVelocity(float FramesPerSecond);
-        void SetSampleVelocity(int SampleVelocity);
-        void SetStart(float Position);
-        void SetPosition(int Position);
-        void SetWindow(WindowType type);
-        void AssignBuffer(vector<float>* & AudioBuffer);
+        void SetGrainDuration(float GrainDuration);
         
-        const int GetGrainSize() const { return grainSize; }
-        const float GetGrainVelocity() const { return grainVelocity; }
-        const int GetSampleVelocity() const { return inc; }
         
         // -------------------- Public Methods
+        
         float tick();
         
         
     private:
         // -------------------- Private Members
+        int positionInGrain;
         int grainSize;
-        int frame;
-        int pos;
-        int inc;
-        //int offset;
-        int count;
+        int grainStart;
         
-        int bufferSize;
-        int channelNum;
-        int sampleRate;
-        int sampleSize;
+        float sampleRate;
         
-        float grainVelocity;
-        float sample;
-        vector<float>* buffer;
-        Window* FrameWindow;
-        WindowType windowType;
-        
+        vector<float>* audioBuffer;
+        Window grainWindow;
         
         // -------------------- Private Methods
-        void ShiftFrame();
-        inline float SmallOverlap();
-        inline float FullOverlap();
         
     }; // End Grain class
 } // End AudioSynthesis

@@ -66,8 +66,8 @@ namespace AudioSynthesis
         kx3 = a + b * (y + step / 2.0) - (x + kx2 / 2.0) * (x + kx2 / 2.0);
         ky3 = (x + step / 2.0);
         
-        kx2 = a + b * (y + step) - (x + kx3) * (x + kx3);
-        ky2 = (x + step);
+        kx4 = a + b * (y + step) - (x + kx3) * (x + kx3);
+        ky4 = (x + step);
         
         x = x + (kx1 + kx4) / 6.0 + (kx2 + kx3) / 3.0 ;
         y = y + (ky1 + ky4) / 6.0 + (ky2 + ky3) / 3.0 ;

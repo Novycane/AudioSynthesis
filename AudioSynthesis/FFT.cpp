@@ -28,12 +28,11 @@ namespace AudioSynthesis
     // ---------------------------------------- Public Methods
     void FFT::Compute(vector<double> & x, vector<complex<double>> & X)
     {
-        int N = x.size();
+        int N = (int)x.size();
         int step = 2;
         int span = 1;
         int i, k;
         //double tempR, tempI;
-        double factor;
         
         
         if(N & (N - 1) || N < 2)
@@ -75,11 +74,10 @@ namespace AudioSynthesis
     
     void FFT::Compute(vector<complex<double>> & x)
     {
-        int N = x.size();
+        int N = (int)x.size();
         int step = 2;
         int span = 1;
         int i, k;
-        double factor;
         
         if(N & (N - 1) || N < 2)
             throw new PowerOfTwoError();
@@ -111,12 +109,10 @@ namespace AudioSynthesis
 
     void FFT::ComputeInverse(vector<double> & x, vector<complex<double>> & X)
     {
-        int N = x.size();
+        int N = (int)x.size();
         int step = 2;
         int span = 1;
         int i, k;
-        //double tempR, tempI;
-        double factor;
         
         
         if(N & (N - 1) || N < 2)
@@ -161,11 +157,10 @@ namespace AudioSynthesis
     
     void FFT::ComputeInverse(vector<complex<double>> & x)
     {
-        int N = x.size();
+        int N = (int)x.size();
         int step = 2;
         int span = 1;
         int i, k;
-        double factor;
         
         if(N & (N - 1) || N < 2)
             throw new PowerOfTwoError();
@@ -197,7 +192,60 @@ namespace AudioSynthesis
             x[i] /= N;
     }
     
+    
+    void FFT::ComputeCepstrum(vector<double> & x)
+    {
+        vector<complex<double>>X;
+        X.resize(x.size());
+        Compute(x, X);
+        for(int i=0; i<x.size(); i++)
+        {
+            x[i] = abs(X[i]);
+            x[i] = x[i] * x[i];
+            x[i] = log(x[i]);
+        }
+        ComputeInverse(x, X);
+        
+        for(int i=0; i<x.size(); i++)
+        {
+            x[i] = abs(X[i]);
+            x[i] = x[i] * x[i];
+        }
+    }
+    
+    void FFT::ComputeCepstrum(vector<double> & x, vector<double> & C)
+    {
+        if(C.size() != x.size())
+            C.resize(x.size());
+        
+        vector<complex<double>>X;
+        X.resize(x.size());
+        Compute(x, X);
+        for(int i=0; i<x.size(); i++)
+        {
+            x[i] = abs(X[i]);
+            if(x[i] != 0)
+            {
+                x[i] = log(x[i]);
+            }
+            else
+                x[i] = std:: numeric_limits<float>::min();
+        }
+        ComputeInverse(x, X);
+        
+        for(int i=0; i<X.size(); i++)
+            C[i] = abs(X[i]);
+    }
 
+    void ComputeMinPhase(vector<double> & x)
+    {
+        /*
+        expx = expf(x);
+        *zx = expx * cosf(y);
+        *zy = expx * sinf(y);
+         */
+    }
+    
     #pragma mark Private Methods
     // ---------------------------------------- Private Methods
     
@@ -205,7 +253,6 @@ namespace AudioSynthesis
     {
         int m;
         int j=1;
-        double temp;
         
         for (int i=1; i<length; i+=1)
         {
@@ -227,7 +274,7 @@ namespace AudioSynthesis
     
     void FFT::TransformNaive(vector<double> & x, vector<complex<double>> & X)
     {
-        int n = x.size();
+        int n = (int)x.size();
         double sqrtN = 1.0 / sqrt(n);
         X.clear();
         
@@ -247,7 +294,7 @@ namespace AudioSynthesis
     
     void FFT::InverseNaive(vector<complex<double>> & X, vector<double> & x)
     {
-        int n = X.size();
+        int n = (int) X.size();
         double sqrtN = 1.0 / sqrt(n);
         x.clear();
         
@@ -267,11 +314,10 @@ namespace AudioSynthesis
     
     void FFT::Transform(vector<double> & x, vector<complex<double>> & X)
     {
-        int N = x.size();
+        int N = (int) x.size();
         int step = 2;
         int span = 1;
         int i, k;
-        double factor;
         
         
         if(N & (N - 1) || N < 2)

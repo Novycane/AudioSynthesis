@@ -30,12 +30,16 @@ namespace AudioSynthesis
         float tick();
         void ModulatePitch(float scale);
         
-    private:
+    protected:
         // -------------------- Private Members
         float sampleRate;
         float frequency;
         float modulo;
         float step;
+        // -------------------- Protected Methods
+        
+    private:
+        // -------------------- Private Members
         
         // -------------------- Private Methods
         

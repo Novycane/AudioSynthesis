@@ -17,6 +17,7 @@
 #include "Window.hpp"
 
 #include "Oscillator.hpp"
+#include "BLEPOscillator.hpp"
 #include "CircuitOsc.hpp"
 #include "Lorenz.hpp"
 #include "Rossler.hpp"
@@ -25,6 +26,7 @@
 
 #include "Envelope.hpp"
 #include "AD.hpp"
+#include "ADSR.hpp"
 
 #include "Grain.hpp"
 

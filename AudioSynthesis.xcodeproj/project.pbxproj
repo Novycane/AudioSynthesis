@@ -11,6 +11,8 @@
 		BE2701BB1E7A55370057E5D4 /* Grain.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE2701B91E7A55370057E5D4 /* Grain.hpp */; };
 		BE2701C01E7A56510057E5D4 /* WaveFile.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE2701BE1E7A56510057E5D4 /* WaveFile.hpp */; };
 		BE2701C11E7A56510057E5D4 /* WaveFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2701BF1E7A56510057E5D4 /* WaveFile.cpp */; };
+		BE2B6B341EA166A2001ED361 /* OneRC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2B6B321EA166A2001ED361 /* OneRC.cpp */; };
+		BE2B6B351EA166A2001ED361 /* OneRC.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE2B6B331EA166A2001ED361 /* OneRC.hpp */; };
 		BE3198591E7072A20079AA47 /* NaiveFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3198571E7072A20079AA47 /* NaiveFilter.cpp */; };
 		BE31985A1E7072A20079AA47 /* NaiveFilter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3198581E7072A20079AA47 /* NaiveFilter.hpp */; };
 		BE33F7A01E842ED30006DDD1 /* FFT.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE33F79C1E842ED30006DDD1 /* FFT.hpp */; };
@@ -24,6 +26,8 @@
 		BE3C373B1E7C42D0003C68D6 /* Henon.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3C37391E7C42D0003C68D6 /* Henon.hpp */; };
 		BE3C373E1E7C472C003C68D6 /* HarmonicOsc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3C373C1E7C472C003C68D6 /* HarmonicOsc.cpp */; };
 		BE3C373F1E7C472C003C68D6 /* HarmonicOsc.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE3C373D1E7C472C003C68D6 /* HarmonicOsc.hpp */; };
+		BE4559971EA670E700146218 /* BLEPOscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE4559951EA670E700146218 /* BLEPOscillator.cpp */; };
+		BE4559981EA670E700146218 /* BLEPOscillator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE4559961EA670E700146218 /* BLEPOscillator.hpp */; };
 		BE5E4EEB1E6F697400D2C509 /* Envelope.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EE91E6F697400D2C509 /* Envelope.hpp */; };
 		BE5E4EEF1E6F6A4700D2C509 /* AD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4EED1E6F6A4700D2C509 /* AD.cpp */; };
 		BE5E4EF01E6F6A4700D2C509 /* AD.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */; };
@@ -31,6 +35,8 @@
 		BE5E4EF71E6F974300D2C509 /* CircuitOsc.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */; };
 		BE6A713C1E7B9A150006EAF7 /* Lorenz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE6A713A1E7B9A150006EAF7 /* Lorenz.cpp */; };
 		BE6A713D1E7B9A150006EAF7 /* Lorenz.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE6A713B1E7B9A150006EAF7 /* Lorenz.hpp */; };
+		BEDA0A6E1EA822CC00FFB873 /* ADSR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEDA0A6C1EA822CC00FFB873 /* ADSR.cpp */; };
+		BEDA0A6F1EA822CC00FFB873 /* ADSR.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEDA0A6D1EA822CC00FFB873 /* ADSR.hpp */; };
 		BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */; };
 		BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEEBA63E1E6F60210008FE3B /* Oscillator.hpp */; };
 		BEF24AAA1E85B79100BB3B65 /* AudioSynthesis.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BEEBA63C1E6F5FF50008FE3B /* AudioSynthesis.h */; };
@@ -84,6 +90,8 @@
 		BE2701B91E7A55370057E5D4 /* Grain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Grain.hpp; sourceTree = "<group>"; };
 		BE2701BE1E7A56510057E5D4 /* WaveFile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WaveFile.hpp; sourceTree = "<group>"; };
 		BE2701BF1E7A56510057E5D4 /* WaveFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaveFile.cpp; sourceTree = "<group>"; };
+		BE2B6B321EA166A2001ED361 /* OneRC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OneRC.cpp; sourceTree = "<group>"; };
+		BE2B6B331EA166A2001ED361 /* OneRC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OneRC.hpp; sourceTree = "<group>"; };
 		BE3198571E7072A20079AA47 /* NaiveFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NaiveFilter.cpp; sourceTree = "<group>"; };
 		BE3198581E7072A20079AA47 /* NaiveFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NaiveFilter.hpp; sourceTree = "<group>"; };
 		BE33F79C1E842ED30006DDD1 /* FFT.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FFT.hpp; sourceTree = "<group>"; };
@@ -97,6 +105,8 @@
 		BE3C37391E7C42D0003C68D6 /* Henon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Henon.hpp; sourceTree = "<group>"; };
 		BE3C373C1E7C472C003C68D6 /* HarmonicOsc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarmonicOsc.cpp; sourceTree = "<group>"; };
 		BE3C373D1E7C472C003C68D6 /* HarmonicOsc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HarmonicOsc.hpp; sourceTree = "<group>"; };
+		BE4559951EA670E700146218 /* BLEPOscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BLEPOscillator.cpp; sourceTree = "<group>"; };
+		BE4559961EA670E700146218 /* BLEPOscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BLEPOscillator.hpp; sourceTree = "<group>"; };
 		BE5E4EE91E6F697400D2C509 /* Envelope.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Envelope.hpp; sourceTree = "<group>"; };
 		BE5E4EED1E6F6A4700D2C509 /* AD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AD.cpp; sourceTree = "<group>"; };
 		BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AD.hpp; sourceTree = "<group>"; };
@@ -104,6 +114,8 @@
 		BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CircuitOsc.hpp; sourceTree = "<group>"; };
 		BE6A713A1E7B9A150006EAF7 /* Lorenz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lorenz.cpp; sourceTree = "<group>"; };
 		BE6A713B1E7B9A150006EAF7 /* Lorenz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Lorenz.hpp; sourceTree = "<group>"; };
+		BEDA0A6C1EA822CC00FFB873 /* ADSR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADSR.cpp; sourceTree = "<group>"; };
+		BEDA0A6D1EA822CC00FFB873 /* ADSR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADSR.hpp; sourceTree = "<group>"; };
 		BEEBA62E1E6F596C0008FE3B /* libAudioSynthesis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioSynthesis.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEBA63C1E6F5FF50008FE3B /* AudioSynthesis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioSynthesis.h; sourceTree = "<group>"; };
 		BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
@@ -145,6 +157,8 @@
 			children = (
 				BE3198581E7072A20079AA47 /* NaiveFilter.hpp */,
 				BE3198571E7072A20079AA47 /* NaiveFilter.cpp */,
+				BE2B6B331EA166A2001ED361 /* OneRC.hpp */,
+				BE2B6B321EA166A2001ED361 /* OneRC.cpp */,
 			);
 			name = Filter;
 			sourceTree = "<group>";
@@ -165,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				BE5E4EE91E6F697400D2C509 /* Envelope.hpp */,
+				BEDA0A6D1EA822CC00FFB873 /* ADSR.hpp */,
+				BEDA0A6C1EA822CC00FFB873 /* ADSR.cpp */,
 				BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */,
 				BE5E4EED1E6F6A4700D2C509 /* AD.cpp */,
 			);
@@ -207,6 +223,8 @@
 			children = (
 				BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */,
 				BE5E4EF41E6F974300D2C509 /* CircuitOsc.cpp */,
+				BE4559961EA670E700146218 /* BLEPOscillator.hpp */,
+				BE4559951EA670E700146218 /* BLEPOscillator.cpp */,
 				BEEBA63E1E6F60210008FE3B /* Oscillator.hpp */,
 				BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */,
 				BE6A713B1E7B9A150006EAF7 /* Lorenz.hpp */,
@@ -235,10 +253,13 @@
 				BE5E4EEB1E6F697400D2C509 /* Envelope.hpp in Headers */,
 				BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */,
 				BE33F7A21E842ED30006DDD1 /* Window.hpp in Headers */,
+				BE4559981EA670E700146218 /* BLEPOscillator.hpp in Headers */,
 				BE3C373B1E7C42D0003C68D6 /* Henon.hpp in Headers */,
+				BE2B6B351EA166A2001ED361 /* OneRC.hpp in Headers */,
 				BE33F7A51E842FF90006DDD1 /* Constants.h in Headers */,
 				BE3C37361E7BC42D003C68D6 /* Rossler.hpp in Headers */,
 				BE2701C01E7A56510057E5D4 /* WaveFile.hpp in Headers */,
+				BEDA0A6F1EA822CC00FFB873 /* ADSR.hpp in Headers */,
 				BE33F7A01E842ED30006DDD1 /* FFT.hpp in Headers */,
 				BE2701BB1E7A55370057E5D4 /* Grain.hpp in Headers */,
 				BE5E4EF01E6F6A4700D2C509 /* AD.hpp in Headers */,
@@ -310,11 +331,14 @@
 				BE2701BA1E7A55370057E5D4 /* Grain.cpp in Sources */,
 				BE33F7A11E842ED30006DDD1 /* FFT.cpp in Sources */,
 				BE5E4EEF1E6F6A4700D2C509 /* AD.cpp in Sources */,
+				BE2B6B341EA166A2001ED361 /* OneRC.cpp in Sources */,
 				BE6A713C1E7B9A150006EAF7 /* Lorenz.cpp in Sources */,
 				BE33F7A31E842ED30006DDD1 /* Window.cpp in Sources */,
+				BEDA0A6E1EA822CC00FFB873 /* ADSR.cpp in Sources */,
 				BE2701C11E7A56510057E5D4 /* WaveFile.cpp in Sources */,
 				BE3C373A1E7C42D0003C68D6 /* Henon.cpp in Sources */,
 				BE3C37351E7BC42D003C68D6 /* Rossler.cpp in Sources */,
+				BE4559971EA670E700146218 /* BLEPOscillator.cpp in Sources */,
 				BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

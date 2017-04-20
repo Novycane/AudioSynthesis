@@ -1,30 +1,32 @@
 //
-//  AD.hpp
+//  ADSR.hpp
 //  AudioSynthesis
 //
-//  Created by Steven Novak on 3/7/17.
+//  Created by Steven Novak on 4/19/17.
 //  Copyright © 2017 Steven Novak. All rights reserved.
 //
 
-#ifndef AD_hpp
-#define AD_hpp
+#ifndef ADSR_hpp
+#define ADSR_hpp
 
 #include "Envelope.hpp"
 #include "Enumerations.h"
 
 namespace AudioSynthesis
 {
-    class AD : public Envelope
+    class ADSR : public Envelope
     {
     public:
         // -------------------- Constructors
-        AD(float SampleRate);
+        ADSR(float SampleRate);
         
         // -------------------- Public Methods
         float tick();
-        void reset();
-        void start();
-        void stop();
+        void Reset();
+        void Start();
+        void Stop();
+        void GateOn();
+        void GateOff();
         
         // -------------------- Accessors
         const float GetSampleRate() const { return sampleRate; }
@@ -32,13 +34,20 @@ namespace AudioSynthesis
         const float GetAttackShape() const { return attackShape; }
         const float GetDecay() const { return decayTime; }
         const float GetDecayShape() const { return decayShape; }
+        const float GetSustain() const { return attackTime; }
+        const float GetRelease() const { return decayTime; }
+        const float GetReleaseShape() const { return decayShape; }
         const float GetCurentVal() const { return val; }
         
         void SetSampleRate(float SampleRate);
         void SetAttack(float Attack);
         void SetDecay(float Decay);
+        void SetSustain(float Sustain);
+        void SetRelease(float Release);
+        
         void SetAttackShape(float AttackShape);
         void SetDecayShape(float DecayShape);
+        void SetReleaseShape(float ReleaseShape);
         
         bool IsRunning() { return isRunning; };
         
@@ -47,12 +56,17 @@ namespace AudioSynthesis
         float sampleRate;
         float aStep;
         float dStep;
+        float rStep;
         float attackTime;
         float attackShape;
         float decayTime;
         float decayShape;
+        float sustainLevel;
+        float releaseTime;
+        float releaseShape;
         float val;
         bool isRunning;
+        bool gateOn;
         EnvelopeState state;
         
         // -------------------- Private Methods
@@ -61,5 +75,4 @@ namespace AudioSynthesis
     }; // End AD Class
 }
 
-
-#endif /* AD_hpp */
+#endif /* ADSR_hpp */

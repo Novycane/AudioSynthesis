@@ -16,9 +16,9 @@ namespace AudioSynthesis
     Oscillator::Oscillator(float SampleRate)
     {
         sampleRate = SampleRate;
-        modulo = 0;
         frequency = 100.0;
         step = 100.0 / sampleRate;
+        modulo = step;
     }
     
     #pragma mark Setters

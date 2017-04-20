@@ -16,7 +16,7 @@ namespace AudioSynthesis
     AD::AD(float SampleRate)
     {
         sampleRate = SampleRate;
-        state = idle;
+        state = EnvelopeState::IDLE;
         SetAttack(1.0);
         SetDecay(1.0);
         attackShape = 0.5;
@@ -28,26 +28,26 @@ namespace AudioSynthesis
     // -------------------------------------------------- Public Methods
     float AD::tick()
     {
-        float shape;
-        if(state == att)
+        float shape = attackShape;
+        if(state == EnvelopeState::ATTACK)
         {
             shape = attackShape;
             val += aStep;
             
             if(val >= 1)
             {
-                state = dec;
+                state = EnvelopeState::DECAY;
                 // Need to correct for overshoot
             }
         }
-        else if(state == dec)
+        else if(state == EnvelopeState::DECAY)
         {
             shape = decayShape;
             val -= dStep;
             if(val <=0 )
             {
                 val = 0;
-                state = idle;
+                state = EnvelopeState::IDLE;
                 isRunning = false;
             }
         }
@@ -64,13 +64,13 @@ namespace AudioSynthesis
     void AD::start()
     {
         isRunning = true;
-        state = att;
+        state = EnvelopeState::ATTACK;
     }
     
     void AD::stop()
     {
         isRunning = false;
-        state = idle;
+        state = EnvelopeState::IDLE;
     }
     
     void AD::SetSampleRate(float SampleRate)

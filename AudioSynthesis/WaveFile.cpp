@@ -560,15 +560,12 @@ bool WaveFile::OpenFileAsFloat(const string & FileName)
     for(int i=0; i<4; i++)
         *Val32 = 0;
     
-    int temp = totalByteSize * sampleSize / 8 / sizeof(float);
-    
     for(int i=0; i < totalByteSize * sampleSize / 8 / sizeof(float); i++)
     {
         InFile.read(Value, sampleSize / 8);
         
         int16_t* Val = (int16_t*)Value;
         
-        float temp = (float)*Val / (float) INT16_MAX ;
         fblock[i] = (float)*Val / (float) INT16_MAX ;
         
     }
