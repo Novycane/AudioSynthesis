@@ -9,8 +9,8 @@
 #ifndef Grain_hpp
 #define Grain_hpp
 
-#include "WaveFile.hpp"
 #include <vector>
+#include <memory>
 #include "Window.hpp"
 
 namespace AudioSynthesis
@@ -20,27 +20,41 @@ namespace AudioSynthesis
     public:
         // -------------------- Constructors
         Grain(float SampleRate);
-        ~Grain();
         
         // -------------------- Accessors
         void SetGrainSize(int SamplesPerGrain);
         void SetGrainDuration(float GrainDuration);
+        void SetGrainPhaseInPercent(float Phase);
+        void SetGrainPhaseInSamples(int Phase);
+        void SetGrainPositionInPercent(float Position);
+        void SetGrainPositionInSamples(int Position);
+        void SetPlaybackRate(float RelativePitch);
+        void SetGrainSpeed(float GrainSpeed);
         
+        void AssignBuffer(shared_ptr<vector<float>> & Buffer);
         
         // -------------------- Public Methods
-        
         float tick();
         
+        void ShiftFrame(int Samples);
+        
+        void makeSin();
         
     private:
         // -------------------- Private Members
         int positionInGrain;
+        int positionInBuffer;
+        int nextPositionInBuffer;
         int grainSize;
-        int grainStart;
         
+        float positionInGrainf;
+        float playbackSpeed;
+        float grainSpeed;
         float sampleRate;
         
-        vector<float>* audioBuffer;
+        //vector<float>* audioBuffer;
+        std::shared_ptr<vector<float>> audioBuffer;
+        
         Window grainWindow;
         
         // -------------------- Private Methods
