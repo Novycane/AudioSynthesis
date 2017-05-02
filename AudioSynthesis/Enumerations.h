@@ -15,6 +15,7 @@ namespace AudioSynthesis
 
     enum class EnvelopeState {IDLE, DELAY, ATTACK, HOLD, DECAY, LOOP, SUSTAIN, RELEASE};
     
+    enum class DelayDirection {FORWARD, REVERSE};
 }
 
 

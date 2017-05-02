@@ -35,6 +35,12 @@
 		BE5E4EF71E6F974300D2C509 /* CircuitOsc.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */; };
 		BE6A713C1E7B9A150006EAF7 /* Lorenz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE6A713A1E7B9A150006EAF7 /* Lorenz.cpp */; };
 		BE6A713D1E7B9A150006EAF7 /* Lorenz.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE6A713B1E7B9A150006EAF7 /* Lorenz.hpp */; };
+		BEA9B4BF1EB7A7B5009957D3 /* DelayLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEA9B4BD1EB7A7B5009957D3 /* DelayLine.cpp */; };
+		BEA9B4C01EB7A7B5009957D3 /* DelayLine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEA9B4BE1EB7A7B5009957D3 /* DelayLine.hpp */; };
+		BEA9B4C31EB7B2C4009957D3 /* AHD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEA9B4C11EB7B2C4009957D3 /* AHD.cpp */; };
+		BEA9B4C41EB7B2C4009957D3 /* AHD.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEA9B4C21EB7B2C4009957D3 /* AHD.hpp */; };
+		BEA9B4C71EB7FC8B009957D3 /* TapedDelay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEA9B4C51EB7FC8B009957D3 /* TapedDelay.cpp */; };
+		BEA9B4C81EB7FC8B009957D3 /* TapedDelay.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEA9B4C61EB7FC8B009957D3 /* TapedDelay.hpp */; };
 		BEDA0A6E1EA822CC00FFB873 /* ADSR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEDA0A6C1EA822CC00FFB873 /* ADSR.cpp */; };
 		BEDA0A6F1EA822CC00FFB873 /* ADSR.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BEDA0A6D1EA822CC00FFB873 /* ADSR.hpp */; };
 		BEEBA63F1E6F60210008FE3B /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEEBA63D1E6F60210008FE3B /* Oscillator.cpp */; };
@@ -114,6 +120,12 @@
 		BE5E4EF51E6F974300D2C509 /* CircuitOsc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CircuitOsc.hpp; sourceTree = "<group>"; };
 		BE6A713A1E7B9A150006EAF7 /* Lorenz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lorenz.cpp; sourceTree = "<group>"; };
 		BE6A713B1E7B9A150006EAF7 /* Lorenz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Lorenz.hpp; sourceTree = "<group>"; };
+		BEA9B4BD1EB7A7B5009957D3 /* DelayLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelayLine.cpp; sourceTree = "<group>"; };
+		BEA9B4BE1EB7A7B5009957D3 /* DelayLine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DelayLine.hpp; sourceTree = "<group>"; };
+		BEA9B4C11EB7B2C4009957D3 /* AHD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AHD.cpp; sourceTree = "<group>"; };
+		BEA9B4C21EB7B2C4009957D3 /* AHD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AHD.hpp; sourceTree = "<group>"; };
+		BEA9B4C51EB7FC8B009957D3 /* TapedDelay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TapedDelay.cpp; sourceTree = "<group>"; };
+		BEA9B4C61EB7FC8B009957D3 /* TapedDelay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TapedDelay.hpp; sourceTree = "<group>"; };
 		BEDA0A6C1EA822CC00FFB873 /* ADSR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADSR.cpp; sourceTree = "<group>"; };
 		BEDA0A6D1EA822CC00FFB873 /* ADSR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADSR.hpp; sourceTree = "<group>"; };
 		BEEBA62E1E6F596C0008FE3B /* libAudioSynthesis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioSynthesis.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,10 +193,23 @@
 				BE5E4EE91E6F697400D2C509 /* Envelope.hpp */,
 				BEDA0A6D1EA822CC00FFB873 /* ADSR.hpp */,
 				BEDA0A6C1EA822CC00FFB873 /* ADSR.cpp */,
+				BEA9B4C11EB7B2C4009957D3 /* AHD.cpp */,
+				BEA9B4C21EB7B2C4009957D3 /* AHD.hpp */,
 				BE5E4EEE1E6F6A4700D2C509 /* AD.hpp */,
 				BE5E4EED1E6F6A4700D2C509 /* AD.cpp */,
 			);
 			name = Envelope;
+			sourceTree = "<group>";
+		};
+		BEA9B4BC1EB6A579009957D3 /* Waveguides */ = {
+			isa = PBXGroup;
+			children = (
+				BEA9B4BE1EB7A7B5009957D3 /* DelayLine.hpp */,
+				BEA9B4BD1EB7A7B5009957D3 /* DelayLine.cpp */,
+				BEA9B4C61EB7FC8B009957D3 /* TapedDelay.hpp */,
+				BEA9B4C51EB7FC8B009957D3 /* TapedDelay.cpp */,
+			);
+			name = Waveguides;
 			sourceTree = "<group>";
 		};
 		BEEBA6251E6F596C0008FE3B = {
@@ -212,6 +237,7 @@
 				BE31985B1E7072A70079AA47 /* Filter */,
 				BEEBA6411E6F602C0008FE3B /* Oscillator */,
 				BE5E4EEC1E6F698000D2C509 /* Envelope */,
+				BEA9B4BC1EB6A579009957D3 /* Waveguides */,
 				BEEBA63C1E6F5FF50008FE3B /* AudioSynthesis.h */,
 				BEF24AD31E85F3E400BB3B65 /* Enumerations.h */,
 			);
@@ -247,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5E4EF71E6F974300D2C509 /* CircuitOsc.hpp in Headers */,
+				BEA9B4C81EB7FC8B009957D3 /* TapedDelay.hpp in Headers */,
 				BE31985A1E7072A20079AA47 /* NaiveFilter.hpp in Headers */,
 				BE3C373F1E7C472C003C68D6 /* HarmonicOsc.hpp in Headers */,
+				BEA9B4C01EB7A7B5009957D3 /* DelayLine.hpp in Headers */,
 				BE6A713D1E7B9A150006EAF7 /* Lorenz.hpp in Headers */,
 				BE5E4EEB1E6F697400D2C509 /* Envelope.hpp in Headers */,
 				BEEBA6401E6F60210008FE3B /* Oscillator.hpp in Headers */,
@@ -262,6 +290,7 @@
 				BEDA0A6F1EA822CC00FFB873 /* ADSR.hpp in Headers */,
 				BE33F7A01E842ED30006DDD1 /* FFT.hpp in Headers */,
 				BE2701BB1E7A55370057E5D4 /* Grain.hpp in Headers */,
+				BEA9B4C41EB7B2C4009957D3 /* AHD.hpp in Headers */,
 				BE5E4EF01E6F6A4700D2C509 /* AD.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +360,10 @@
 				BE2701BA1E7A55370057E5D4 /* Grain.cpp in Sources */,
 				BE33F7A11E842ED30006DDD1 /* FFT.cpp in Sources */,
 				BE5E4EEF1E6F6A4700D2C509 /* AD.cpp in Sources */,
+				BEA9B4C71EB7FC8B009957D3 /* TapedDelay.cpp in Sources */,
 				BE2B6B341EA166A2001ED361 /* OneRC.cpp in Sources */,
+				BEA9B4BF1EB7A7B5009957D3 /* DelayLine.cpp in Sources */,
+				BEA9B4C31EB7B2C4009957D3 /* AHD.cpp in Sources */,
 				BE6A713C1E7B9A150006EAF7 /* Lorenz.cpp in Sources */,
 				BE33F7A31E842ED30006DDD1 /* Window.cpp in Sources */,
 				BEDA0A6E1EA822CC00FFB873 /* ADSR.cpp in Sources */,
@@ -351,8 +383,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -399,8 +431,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;

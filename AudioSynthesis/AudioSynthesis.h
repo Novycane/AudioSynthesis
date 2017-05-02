@@ -26,11 +26,15 @@
 
 #include "Envelope.hpp"
 #include "AD.hpp"
+#include "AHD.hpp"
 #include "ADSR.hpp"
 
 #include "Grain.hpp"
 
+#include "DelayLine.hpp"
+
 #include "NaiveFilter.hpp"
+#include "OneRC.hpp"
 
 #include "WaveFile.hpp"
 
