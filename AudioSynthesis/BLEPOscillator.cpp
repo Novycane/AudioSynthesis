@@ -29,13 +29,25 @@ namespace AudioSynthesis
     {
         BLEPPoints = NumBLEPPoints;
         if(BLEPPoints < 3)
-            BLEPFunc = &BLEPOscillator::Do2PtBLEP;
+            if(!invertPhase)
+                BLEPFunc = &BLEPOscillator::Do2PtBLEP_DOWN;
+            else
+                BLEPFunc = &BLEPOscillator::Do2PtBLEP_UP;
         else if (BLEPPoints < 5)
-            BLEPFunc = &BLEPOscillator::Do4PtBLEP;
+            if(!invertPhase)
+                BLEPFunc = &BLEPOscillator::Do4PtBLEP_DOWN;
+            else
+                BLEPFunc = &BLEPOscillator::Do4PtBLEP_UP;
         else if (BLEPPoints < 7)
-            BLEPFunc = &BLEPOscillator::Do6PtBLEP;
+            if(!invertPhase)
+                BLEPFunc = &BLEPOscillator::Do6PtBLEP_DOWN;
+            else
+                BLEPFunc = &BLEPOscillator::Do6PtBLEP_UP;
         else if (BLEPPoints < 9)
-            BLEPFunc = &BLEPOscillator::Do8PtBLEP;
+            if(!invertPhase)
+                BLEPFunc = &BLEPOscillator::Do8PtBLEP_DOWN;
+            else
+                BLEPFunc = &BLEPOscillator::Do8PtBLEP_UP;
         else
             throw std::runtime_error ("Invalid number of BLEP Points");
         
@@ -52,7 +64,7 @@ namespace AudioSynthesis
     
     #pragma mark Private Methods
     // -------------------------------------------------- Private Methods
-    float BLEPOscillator::Do2PtBLEP()
+    float BLEPOscillator::Do2PtBLEP_DOWN()
     {
         if(this->modulo + this->step > 1.0)
         {
@@ -74,7 +86,7 @@ namespace AudioSynthesis
         }
     }
     
-    float BLEPOscillator::Do4PtBLEP()
+    float BLEPOscillator::Do4PtBLEP_DOWN()
     {
         if(this->modulo + 2 * this->step > 1.0)
         {
@@ -96,7 +108,7 @@ namespace AudioSynthesis
         }
     }
     
-    float BLEPOscillator::Do6PtBLEP()
+    float BLEPOscillator::Do6PtBLEP_DOWN()
     {
         if(this->modulo + 2 * this->step > 1.0)
         {
@@ -118,7 +130,7 @@ namespace AudioSynthesis
         }
     }
     
-    float BLEPOscillator::Do8PtBLEP()
+    float BLEPOscillator::Do8PtBLEP_DOWN()
     {
         if(this->modulo + 2 * this->step > 1.0)
         {
@@ -134,6 +146,94 @@ namespace AudioSynthesis
             float temp = (this->modulo) / (4.0 * step);
             index = (int) (index * temp);
             return this->modulo - BLEPTable[tableSize / 2 + index];        }
+        else
+        {
+            return this->modulo;
+        }
+    }
+    
+    float BLEPOscillator::Do2PtBLEP_UP()
+    {
+        if(this->modulo + this->step > 1.0)
+        {
+            int index = (int)(tableSize / 2) - 1;
+            float temp = 1.0 - (1.0 - this->modulo) / step;
+            index = (int) (index * temp);
+            return this->modulo + BLEPTable[index];
+        }
+        else if (this->modulo < this->step)
+        {
+            int index = (int)(tableSize / 2);
+            float temp = (this->modulo) / step;
+            index = (int) (index * temp);
+            return this->modulo + BLEPTable[tableSize / 2 + index];
+        }
+        else
+        {
+            return this->modulo;
+        }
+    }
+    
+    float BLEPOscillator::Do4PtBLEP_UP()
+    {
+        if(this->modulo + 2 * this->step > 1.0)
+        {
+            int index = (int)(tableSize / 2) - 1;
+            float temp = 1.0 - (1.0 - this->modulo) / (2.0 * step);
+            index = (int) (index * temp);
+            temp = BLEPTable[index];
+            return this->modulo + BLEPTable[index];
+        }
+        else if (this->modulo < 2 * this->step)
+        {
+            int index = (int)(tableSize / 2);
+            float temp = (this->modulo) / (2.0 * step);
+            index = (int) (index * temp);
+            return this->modulo + BLEPTable[tableSize / 2 + index];        }
+        else
+        {
+            return this->modulo;
+        }
+    }
+    
+    float BLEPOscillator::Do6PtBLEP_UP()
+    {
+        if(this->modulo + 2 * this->step > 1.0)
+        {
+            int index = (int)(tableSize / 2) - 1;
+            float temp = 1.0 - (1.0 - this->modulo) / (3.0 * step);
+            index = (int) (index * temp);
+            temp = BLEPTable[index];
+            return this->modulo + BLEPTable[index];
+        }
+        else if (this->modulo < 2 * this->step)
+        {
+            int index = (int)(tableSize / 2);
+            float temp = (this->modulo) / (3.0 * step);
+            index = (int) (index * temp);
+            return this->modulo + BLEPTable[tableSize / 2 + index];        }
+        else
+        {
+            return this->modulo;
+        }
+    }
+    
+    float BLEPOscillator::Do8PtBLEP_UP()
+    {
+        if(this->modulo + 2 * this->step > 1.0)
+        {
+            int index = (int)(tableSize / 2) - 1;
+            float temp = 1.0 - (1.0 - this->modulo) / (4.0 * step);
+            index = (int) (index * temp);
+            temp = BLEPTable[index];
+            return this->modulo + BLEPTable[index];
+        }
+        else if (this->modulo < 2 * this->step)
+        {
+            int index = (int)(tableSize / 2);
+            float temp = (this->modulo) / (4.0 * step);
+            index = (int) (index * temp);
+            return this->modulo + BLEPTable[tableSize / 2 + index];        }
         else
         {
             return this->modulo;

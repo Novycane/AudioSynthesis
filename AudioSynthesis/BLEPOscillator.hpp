@@ -39,15 +39,19 @@ namespace AudioSynthesis
         int BLEPPoints;
         vector<float> BLEPTable;
         
-        //float (BLEPOscillator::*BLEPFunc)();
         PtrFunc BLEPFunc;
         
         //-------------------- Private Methods
         void CalcBLEPTable(WindowType window);
-        float Do2PtBLEP();
-        float Do4PtBLEP();
-        float Do6PtBLEP();
-        float Do8PtBLEP();
+        float Do2PtBLEP_UP();
+        float Do4PtBLEP_UP();
+        float Do6PtBLEP_UP();
+        float Do8PtBLEP_UP();
+        
+        float Do2PtBLEP_DOWN();
+        float Do4PtBLEP_DOWN();
+        float Do6PtBLEP_DOWN();
+        float Do8PtBLEP_DOWN();
         
     };
 }
