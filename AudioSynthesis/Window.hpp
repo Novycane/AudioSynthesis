@@ -30,6 +30,8 @@ namespace AudioSynthesis
         const float operator[](int index) const;
         
         // -------------------- Accessors
+        void setSize(int numOfSamples);
+        void PreComputeWindow(bool PreCompute);
         
         // -------------------- Public Methods
         void setType(WindowType typeOfWindow, bool preCompute);
@@ -49,6 +51,8 @@ namespace AudioSynthesis
         const float (Window::*ptrToWindowFunction)(int index) const;
         
         // -------------------- Private Methods
+        void updateWindows();
+        
         void createTriangle();
         void createParzen();
         void createWelch();

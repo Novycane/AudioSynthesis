@@ -19,7 +19,6 @@ namespace AudioSynthesis
         type = WindowType::TRIANGLE;
         windowSize = 0;
         index = 0;
-        
     }
     
     Window::Window(WindowType Type, int Size, bool PreCompute)
@@ -30,10 +29,57 @@ namespace AudioSynthesis
         
         preCompute = PreCompute;
         
+        updateWindows();
+    }
+    
+    #pragma mark Operators
+    // ---------------------------------------- Operators
+    const float Window::operator[](int Index) const
+    {
+        if(preCompute)
+            return data[Index];
+        else
+        {
+            return (this->*ptrToWindowFunction)(Index);
+        }
+    }
+    
+    #pragma mark Accessors
+    // ---------------------------------------- Accessors
+    void Window::setSize(int numOfSamples)
+    {
+        windowSize = numOfSamples;
+        updateWindows();
+    }
+    
+    void Window::PreComputeWindow(bool PreCompute)
+    {
+        preCompute = PreCompute;
+        updateWindows();
+    }
+    
+    #pragma mark Public Methods
+    // ---------------------------------------- Public Methods
+    float Window::CalcWindowAt(int index)
+    {
+        return (this->*ptrToWindowFunction)(index);
+    }
+    
+    void Window::setType(WindowType typeOfWindow, bool PreCompute)
+    {
+        type = typeOfWindow;
+        preCompute = PreCompute;
+        updateWindows();
+    }
+    
+    #pragma mark Private Methods
+    // ---------------------------------------- Private Methods
+    void Window::updateWindows()
+    {
         if(preCompute)
             data.resize(windowSize);
-            
-        switch (Type)
+        
+        switch (type)
         {
             case WindowType::TRIANGLE:
                 if(preCompute)
@@ -160,31 +206,7 @@ namespace AudioSynthesis
         }
     }
     
-    #pragma mark Operators
-    // ---------------------------------------- Operators
-    const float Window::operator[](int Index) const
-    {
-        if(preCompute)
-            return data[Index];
-        else
-        {
-            return (this->*ptrToWindowFunction)(Index);
-        }
-    }
     
-    #pragma mark Accessors
-    // ---------------------------------------- Accessors
-    
-    
-    #pragma mark Public Methods
-    // ---------------------------------------- Public Methods
-    float Window::CalcWindowAt(int index)
-    {
-        return (this->*ptrToWindowFunction)(index);
-    }
-    
-    #pragma mark Private Methods
-    // ---------------------------------------- Private Methods
     void Window::createTriangle()
     {
         double y = 0.0;
