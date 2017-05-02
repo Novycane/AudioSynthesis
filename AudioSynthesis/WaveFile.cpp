@@ -39,7 +39,7 @@ WaveFile::~WaveFile()
 #pragma mark Public Methods
 // ---------------------------------------- Public Methods
 
-bool WaveFile::CreateVector(vector<float> & Data, int ChannelNumber)
+bool WaveFile::CreateVector(shared_ptr<vector<float>> & Data, int ChannelNumber)
 {
     /*
      
@@ -55,11 +55,11 @@ bool WaveFile::CreateVector(vector<float> & Data, int ChannelNumber)
     if(ChannelNumber > numChannels || ChannelNumber < 1)
         return false;
     
-    Data.clear();
-    Data.resize(totalSampleSize);
+    Data->clear();
+    Data->resize(totalSampleSize);
     for(int i=0; i<totalSampleSize; i++)
     {
-        Data[i] = fblock[i];
+        (*Data)[i] = fblock[i];
     }
     
     

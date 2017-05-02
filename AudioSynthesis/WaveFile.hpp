@@ -51,7 +51,7 @@ namespace AudioSynthesis
         void SetSampleSize(int SampleSize) { sampleSize = SampleSize; };
         void SetNumChannels(int NumChannels) { numChannels = NumChannels; };
         
-        bool CreateVector(vector<float> & Data, int ChannelNumber);
+        bool CreateVector(shared_ptr<vector<float>> & Data, int ChannelNumber);
         
     private:
         ofstream ThisFile;
